@@ -1,0 +1,18 @@
+COMPONENTS
+
+-Pages
+   -SearchPage
+   -ResultsPage
+   -LargeImagePage
+
+-Layouts
+
+-SearchPage components:
+   -Input 
+   -SearchButton
+
+- ResultsPage componenets:
+    - photoCard(grid): image, views, downloads, likes, photographer
+
+-LargeImagePage componenets
+     - photoCard(grid): image, views, downloads, likes, photographer (larger)
