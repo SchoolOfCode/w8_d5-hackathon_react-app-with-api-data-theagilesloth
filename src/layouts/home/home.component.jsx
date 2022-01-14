@@ -7,7 +7,7 @@ import { Routes, Route, Link } from "react-router-dom";
 export function HomeLayout({ className }) {
    const [searchValue, setSearchValue] = useState("");
    const [disabled, setDisabled] = useState(false);
-
+   const [no, setNo] = useState(false);
 
    return (
       <div className={className} id="home-section">
@@ -19,7 +19,7 @@ export function HomeLayout({ className }) {
                className={"input"}
                onChange={(evt) => setSearchValue(evt.target.value)}
                placeholder="Search"
-               id={!disabled && "red"}
+               id={no && "red"}
             />
 
             <div id="btn-wrapper">
@@ -27,6 +27,7 @@ export function HomeLayout({ className }) {
                   className="search-btn"
                   onClick={() => {
                      searchValue.length > 0 && setDisabled(true);
+                     setNo(true);
                   }}
                >
                   <Link
