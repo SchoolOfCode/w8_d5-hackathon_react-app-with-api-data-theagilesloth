@@ -5,20 +5,23 @@ import { Buttons } from "../../components/buttons/buttons.component";
 import { Routes, Route, Link } from "react-router-dom";
 
 export function HomeLayout({ className }) {
+
    const [searchValue, setSearchValue] = useState("");
    const [disabled, setDisabled] = useState(false);
 
-   return (
-      <div className={className} id="home-section">
-         <img id="home-image" src="/mountains-55067.png" alt="home" />
-         <div id="overlay" />
-         <div id="input-wrapper">
-            <h1>Search for Your Next Image</h1>
-            <Inputs
-               className="input"
-               onChange={(evt) => setSearchValue(evt.target.value)}
-               placeholder="Search"
-            />
+
+  return (
+    <div className={className} id="home-section">
+      <img id="home-image" src="/mountains-55067.png" alt="home" />
+      <div id="overlay" />
+      <div id="input-wrapper">
+        <h1>Search for Your Next Image</h1>
+        <Inputs
+          className="input"
+          onChange={(evt) => setSearchValue(evt.target.value)}
+          placeholder="Search"
+        />
+
 
             <div id="btn-wrapper">
                <Buttons className="search-btn" onClick={() => {}}>
@@ -26,11 +29,12 @@ export function HomeLayout({ className }) {
                      className="link"
                      to={disabled ? `/results/${searchValue}` : "#"}
                   >
-                     search
+                     Search
                   </Link>
                </Buttons>
             </div>
          </div>
       </div>
-   );
+    </div>
+  );
 }
