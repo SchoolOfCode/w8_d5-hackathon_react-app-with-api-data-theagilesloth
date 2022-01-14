@@ -68,8 +68,36 @@ input:focus {
    width: 120px;
    height: 30px;
    margin-left: 20px;
+
+   background-color: transparent;
+   border: 2px solid white;
+   transition: all 120ms;
+   border-radius: 11px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: row;
+}
+.search-btn:hover {
+   background-color: white;
+   color: black;
 }
 
-#btn-wrapper{
+#btn-wrapper {
    margin-top: 20px;
+   width: 100%;
+   display: flex;
+   align-items: center;
+     justify-content: center;
+   flex-direction: row;
+}
+
+.search-btn:hover .link {
+   color: black;
+}
+
+.link {
+   color: white;
+   text-decoration: none;
+   width: 1000px !important;
 }

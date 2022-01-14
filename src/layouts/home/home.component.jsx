@@ -34,11 +34,15 @@ export function HomeLayout({ className }) {
 
             <div id="btn-wrapper">
                <Buttons className="search-btn">
-                  <Link to={`/results/${searchValue}`}>search</Link>
+                  <Link className="link" to={`/results/${searchValue}`}>
+                     search
+                  </Link>
                </Buttons>
 
                <Buttons className="search-btn">
-                  <Link to={`/`}>Im Feeling lucky</Link>
+                  <Link className="link" to={`/`}>
+                     Im Feeling lucky
+                  </Link>
                </Buttons>
             </div>
          </div>
