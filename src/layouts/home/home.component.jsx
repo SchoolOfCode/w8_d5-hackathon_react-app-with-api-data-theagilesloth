@@ -9,6 +9,10 @@ export function HomeLayout({ className }) {
    const [disabled, setDisabled] = useState(false);
    const [no, setNo] = useState(false);
 
+   useEffect(() => {
+      searchValue.length > 0 && setDisabled(true);
+   }, [searchValue]);
+
    return (
       <div className={className} id="home-section">
          <img id="home-image" src="/mountains-55067.png" alt="home" />
@@ -26,7 +30,6 @@ export function HomeLayout({ className }) {
                <Buttons
                   className="search-btn"
                   onClick={() => {
-                     searchValue.length > 0 && setDisabled(true);
                      setNo(true);
                   }}
                >
