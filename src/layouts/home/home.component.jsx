@@ -1,25 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./home.style.css";
 import { Inputs } from "../../components/inputs/inputs.component";
 import { Buttons } from "../../components/buttons/buttons.component";
+import { Routes, Route, Link } from "react-router-dom";
 
 export function HomeLayout({ className }) {
    const [searchValue, setSearchValue] = useState("");
+   const [lucky, setLucky] = useState("");
 
-   const onSearch = () => {
-      document.location.href = `/results/${searchValue}`;
-   };
-
-   const onImFeelingLuck = () => {
-      const query = window.location.href.split("/")[4];
-      const url = `https://random-word-api.herokuapp.com/word?number=1`;
+   useEffect(() => {
+      const url = `https://api.namefake.com/`;
       const fetchData = async () => {
          const res = await fetch(url);
          const data = await res.json();
-         document.location.href = `/results/${data[0]}`;
+         setLucky(data);
       };
       fetchData();
-   };
+   }, []);
+
+   console.log(lucky);
 
    return (
       <div className={className} id="home-section">
@@ -34,12 +33,12 @@ export function HomeLayout({ className }) {
             />
 
             <div id="btn-wrapper">
-               <Buttons onClick={onSearch} className="search-btn">
-                  Search
+               <Buttons className="search-btn">
+                  <Link to={`/results/${searchValue}`}>search</Link>
                </Buttons>
 
-               <Buttons onClick={onImFeelingLuck} className="search-btn">
-                  Im Feeling lucky
+               <Buttons className="search-btn">
+                  <Link to={`/`}>Im Feeling lucky</Link>
                </Buttons>
             </div>
          </div>
