@@ -21,9 +21,7 @@ export function HomeLayout({ className }) {
             />
 
             <div id="btn-wrapper">
-               <Buttons className="search-btn" onClick={
-                  
-               }>
+               <Buttons className="search-btn" onClick={() => {}}>
                   <Link
                      className="link"
                      to={disabled ? `/results/${searchValue}` : "#"}
