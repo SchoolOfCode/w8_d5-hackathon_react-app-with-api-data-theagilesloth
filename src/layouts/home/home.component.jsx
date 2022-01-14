@@ -13,10 +13,12 @@ export function HomeLayout({ className }) {
    return (
       <div className={className} id="home-section">
          <img id="home-image" src="/mountains-55067.png" alt="home" />
+         <div id="overlay"></div>
          <div id="input-wrapper">
             <Inputs
                className="input"
                onChange={(evt) => setSearchValue(evt.target.value)}
+               placeholder="Search for Your Next Image"
             />
             <Buttons onClick={onSearch}>Search</Buttons>
          </div>
