@@ -5,7 +5,10 @@ import { Buttons } from "../../components/buttons/buttons.component";
 import { Routes, Route, Link } from "react-router-dom";
 
 export function HomeLayout({ className }) {
-  const [searchValue, setSearchValue] = useState("");
+
+   const [searchValue, setSearchValue] = useState("");
+   const [disabled, setDisabled] = useState(false);
+
 
   return (
     <div className={className} id="home-section">
@@ -19,19 +22,18 @@ export function HomeLayout({ className }) {
           placeholder="Search"
         />
 
-        <div id="btn-wrapper">
-          <Buttons className="search-btn">
-            <Link className="link" to={`/results/${searchValue}`}>
-              Search
-            </Link>
-          </Buttons>
 
-          <Buttons className="search-btn ">
-            <Link className="link" to={`/`}>
-              I'm Feeling Lucky!
-            </Link>
-          </Buttons>
-        </div>
+            <div id="btn-wrapper">
+               <Buttons className="search-btn" onClick={() => {}}>
+                  <Link
+                     className="link"
+                     to={disabled ? `/results/${searchValue}` : "#"}
+                  >
+                     Search
+                  </Link>
+               </Buttons>
+            </div>
+         </div>
       </div>
     </div>
   );
