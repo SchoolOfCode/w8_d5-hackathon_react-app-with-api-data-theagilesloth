@@ -1,9 +1,9 @@
-import { HomeLayout } from "../layouts/home/home.component";
+import { ResultsLayout } from "../layouts/results/results.component";
 
 export const Results = () => {
    return (
       <section>
-         <h1>hello</h1>
+         <ResultsLayout />
       </section>
    );
 };
