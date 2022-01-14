@@ -37,7 +37,7 @@ export function HomeLayout({ className }) {
                      className="link"
                      to={disabled ? `/results/${searchValue}` : "#"}
                   >
-                     search
+                     Search
                   </Link>
                </Buttons>
             </div>
