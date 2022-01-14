@@ -8,6 +8,7 @@ export function HomeLayout({ className }) {
    const [searchValue, setSearchValue] = useState("");
    const [disabled, setDisabled] = useState(false);
 
+
    return (
       <div className={className} id="home-section">
          <img id="home-image" src="/mountains-55067.png" alt="home" />
@@ -15,13 +16,19 @@ export function HomeLayout({ className }) {
          <div id="input-wrapper">
             <h1>Search for Your Next Image</h1>
             <Inputs
-               className="input"
+               className={"input"}
                onChange={(evt) => setSearchValue(evt.target.value)}
                placeholder="Search"
+               id={!disabled && "red"}
             />
 
             <div id="btn-wrapper">
-               <Buttons className="search-btn" onClick={() => {}}>
+               <Buttons
+                  className="search-btn"
+                  onClick={() => {
+                     searchValue.length > 0 && setDisabled(true);
+                  }}
+               >
                   <Link
                      className="link"
                      to={disabled ? `/results/${searchValue}` : "#"}

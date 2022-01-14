@@ -88,7 +88,7 @@ input:focus {
    width: 100%;
    display: flex;
    align-items: center;
-     justify-content: center;
+   justify-content: center;
    flex-direction: row;
 }
 
@@ -104,4 +104,8 @@ input:focus {
 
 .disabled-link {
    pointer-events: none;
- }
+}
+
+#red {
+   border-bottom: 2px solid red !important;
+}
