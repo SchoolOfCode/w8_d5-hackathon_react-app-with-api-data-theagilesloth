@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./results.style.css";
+import { Card } from "../../components/card/card.component";
 
 export function ResultsLayout({ className }) {
    useEffect(() => {
@@ -13,5 +14,25 @@ export function ResultsLayout({ className }) {
       fetchData();
    });
 
-   return <div className={className}>hello</div>;
+   return (
+      <div className={className} id="results">
+         <Card
+            className=""
+            image={"/mountains-55067.png"}
+            downloads={"100"}
+            likes={"100"}
+            views={"100"}
+            photographer={"ozzyee"}
+         />
+
+         <Card
+            className=""
+            image={"/mountains-55067.png"}
+            downloads={"100"}
+            likes={"100"}
+            views={"100"}
+            photographer={"ozzyee"}
+         />
+      </div>
+   );
 }
