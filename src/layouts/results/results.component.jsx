@@ -3,36 +3,26 @@ import "./results.style.css";
 import { Card } from "../../components/card/card.component";
 
 export function ResultsLayout({ className }) {
+  const [images, setImages] = useState([]);
   useEffect(() => {
     const query = window.location.href.split("/")[4];
-    const url = `https://pixabay.com/api/?key=${process.env.REACT_APP_API_KEY}&q=${query}&image_type=photo&pretty=true`;
+    const url = `https://pixabay.com/api/?key=${process.env.REACT_APP_API_KEY}&q=${query}`;
     const fetchData = async () => {
       const res = await fetch(url);
       const data = await res.json();
       console.log(data);
+      setImages(data.hits);
     };
+
+    console.log(process.env.REACT_APP_API_KEY);
     fetchData();
   });
 
   return (
     <div className={className} id="results">
-      <Card
-        className=""
-        image={"/mountains-55067.png"}
-        downloads={"100"}
-        likes={"100"}
-        views={"100"}
-        photographer={"ozzyee"}
-      />
-
-      <Card
-        className=""
-        image={"/mountains-55067.png"}
-        downloads={"100"}
-        likes={"100"}
-        views={"100"}
-        photographer={"ozzyee"}
-      />
+      {images.map((image) => {
+        return <Card image={image} key={image.id} />;
+      })}
     </div>
   );
 }
