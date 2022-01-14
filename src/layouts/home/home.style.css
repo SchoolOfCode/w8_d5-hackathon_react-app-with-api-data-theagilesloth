@@ -101,3 +101,7 @@ input:focus {
    text-decoration: none;
    width: 1000px !important;
 }
+
+.disabled-link {
+   pointer-events: none;
+ }

@@ -6,19 +6,6 @@ import { Routes, Route, Link } from "react-router-dom";
 
 export function HomeLayout({ className }) {
    const [searchValue, setSearchValue] = useState("");
-   const [lucky, setLucky] = useState("");
-
-   useEffect(() => {
-      const url = `https://api.namefake.com/`;
-      const fetchData = async () => {
-         const res = await fetch(url);
-         const data = await res.json();
-         setLucky(data);
-      };
-      fetchData();
-   }, []);
-
-   console.log(lucky);
 
    return (
       <div className={className} id="home-section">
@@ -39,8 +26,8 @@ export function HomeLayout({ className }) {
                   </Link>
                </Buttons>
 
-               <Buttons className="search-btn">
-                  <Link className="link" to={`/`}>
+               <Buttons className="search-btn ">
+                  <Link className="link" to={`/`} >
                      Im Feeling lucky
                   </Link>
                </Buttons>
