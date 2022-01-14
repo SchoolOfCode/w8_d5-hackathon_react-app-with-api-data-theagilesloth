@@ -5,3 +5,6 @@
   flex-wrap: wrap;
   padding: 20px;
 }
+.error {
+  color: black;
+}
